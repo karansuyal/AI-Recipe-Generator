@@ -1,21 +1,23 @@
+/* In your globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.recipe-card {
+    transition: transform 0.2s ease-in-out;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+  .recipe-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .ingredient-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .ingredient-list {
+      columns: 1;
+    }
+  }
